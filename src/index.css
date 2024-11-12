@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+@font-face {
+    font-family: AvenirRoman;
+    src: url('./assets/Avenir-Roman.ttf');
+}
+ 
+html , body{
+    background-color:#040714;
+    color: #f9f9f9;
+    font-family:AvenirRoman ;
+}
+a{
+    color:white;
+    text-decoration:none;
+}
+.backgound{
+    background-image: url('/public/image/login-background.jpg');
+    background-size: cover;
+    background-position: center;
+    
+}
+.logo-one  {
+    background-image: url('/public/image/cta-logo-one.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.logo-two {
+    background-image: url('/public/image/cta-logo-two.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+.logo{
+    background-image: url('/public/image/logo.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.linkwarper{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.Navlink {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #f9f9f9;
+  }
+  
+  .Navlink::before {
+    content: "";
+    position: absolute;
+    bottom: -4px; 
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #f9f9f9;
+    transition: width 0.8s ease;
+  }
+  
+  .Navlink:hover::before {
+    width: 100%; 
+  }
+  
+  .Navlink.active::before {
+    width: 100%; 
+  }
+  
+@media only  screen and (min-width:768px) {
+    body{
+        font-size: 16px;
+    }
+}
+@media only  screen and (min-width:480px)  and (max-width:768px) {
+    body{
+        font-size: 15px;
+    }
+}
+@media only  screen and (max-width:479px)  {
+    body{
+        font-size: 14px;
+    }
+}
