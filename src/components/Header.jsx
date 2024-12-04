@@ -2,6 +2,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { selectUserName, selectUserEmail, selectUserPhoto, setUserLoginDetails } from '../../store/reducers/UserSlice';
+import { useEffect } from "react";
+import Logout from "./Logout";
 
 const Header = () => {
   const { user, loginWithRedirect, isAuthenticated, isLoading, logout } = useAuth0();
@@ -9,6 +11,17 @@ const Header = () => {
   const username = useSelector(selectUserName);
   const userEmail = useSelector(selectUserEmail);
   const userPhoto = useSelector(selectUserPhoto);
+  
+
+   useEffect(() => {
+    if (isAuthenticated && user && !isLoading) {
+      dispatch(setUserLoginDetails({
+        name: user.name,
+        email: user.email,
+        photo: user.picture,
+      }));
+    }
+  }, [isAuthenticated, user, isLoading, dispatch]);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -29,8 +42,11 @@ const Header = () => {
     }));
   }
 
+
+  
+
   return (
-    <div className="h-[12vh] w-full flex items-center justify-between fixed top-0 left-0 bg-[#090b13] py-2 px-4">
+    <div className="h-[12vh] w-full flex items-center justify-between fixed top-0 left-0 z-10 bg-[#090b13] py-2 px-4">
       <div className="flex gap-5 justify-between items-center h-full w-[50%] md:lg:min-w-[60%] lg:min-w-[60%] px-5">
         <div className="logo h-full md:w-[20%] lg:w-[20%]"></div>
 
@@ -71,15 +87,18 @@ const Header = () => {
         </div>
       ) : (
         <>
-          <div
-            className="profilebox h-[8vh] w-[8vh] border rounded-full bg-cover bg-center"
+         <Logout/>
+          {/* <div className="h-full relative bg-red-400">
+          <div className="profilebox h-[8vh] w-[8vh] border rounded-full bg-cover bg-center"
             style={{ backgroundImage: `url(${user.picture})` }}
           ></div>
+
           <div onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
-            className="Logout hidden px-7 py-2 border text-white capitalize font-semibold hover:bg-white hover:text-black cursor-pointer"
+            className="Logout  px-7 py-2 border text-white capitalize font-semibold hover:bg-white hover:text-black cursor-pointer"
           >
             Log Out
           </div>
+          </div> */}
         </>
       )}
     </div>

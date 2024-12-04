@@ -52,6 +52,12 @@ a{
     gap: 5px;
 }
 
+.homepage{
+    background-image: url('/image/homebackground.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+ }
 .Navlink {
     position: relative;
     display: flex;
@@ -63,6 +69,8 @@ a{
     letter-spacing: 1px;
     color: #f9f9f9;
 }
+
+
   
 .Navlink::before {
     content: "";
@@ -78,12 +86,41 @@ a{
 .Navlink:hover::before {
     width: 100%; 
 }
+
+
   
-.Navlink.active::before {
+/* .Navlink.active::before {
     width: 100%; 
-}
+} */
 .Login{
     transition:all ease 0.5s;
+}
+
+.SliderWraper{
+    margin-top: 20px;
+}
+.slick-arrow{
+    opacity: 0;
+    transition: all ease 0.5s;
+}
+
+.slick-slider ul li button::before{
+  font-size: 10px;
+  color: rgb(150, 150, 171);
+}
+.slick-slider ul li.slick-active button::before{
+    color: white;
+}
+.slick-slider:hover  .slick-arrow{
+    opacity: 1;
+}
+.slick-slider:hover {
+    border: 1px solid white;
+    transition: all ease 0.5s;
+
+}
+.slick-list{
+    overflow:initial;
 }
   
 @media only  screen and (min-width:768px) {
@@ -101,3 +138,4 @@ a{
         font-size: 14px;
     }
 }
+
