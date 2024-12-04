@@ -12,17 +12,29 @@ const ImageSlider = () => {
     }
 
   return (
-     <div className='SliderWraper  h-full  w-full px-6'>
+     <div className='SliderWraper  md:h-full  w-full md:px-6'>
         <Slider  {...settings} > 
-            <div>
-                <h3>1</h3>
+            <div className='Imagewrape h-[30vh] md:h-full'>
+                <a>
+                    <img  src="/image/slider-badging.jpg" alt="" />
+                </a>
             </div>
-            <div>
-                <h3>2</h3>
+            <div className='Imagewrape  h-[30vh] md:h-full'>
+                <a>
+                    <img src="/image/slider-badag.jpg" alt="" />
+                </a>
             </div>
-            <div>
-                <h3>3</h3>
+            <div className='Imagewrape  h-[30vh] md:h-full'>
+                <a>
+                    <img src="/image/slider-scale.jpg" alt="" />
+                </a>
             </div>
+            <div className='Imagewrape  h-[30vh] md:h-full'>
+                <a>
+                    <img src="/image/slider-scales.jpg" alt="" />
+                </a>
+            </div>
+           
         </Slider> 
      </div> 
     )
