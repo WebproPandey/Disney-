@@ -178,8 +178,9 @@ a{
 }
 .Viewerbox:hover{
     border: 3px solid  white;
+    transform: scale(1.05);
 }
-.Viewerbox img{
+.Viewers .Viewerbox img{
   z-index: 10;
   position: absolute;
   top: 0;
@@ -187,6 +188,22 @@ a{
   height: 100%;
   width: 100%;
 }
+.wraper::-webkit-scrollbar{
+    display: none;
+}
+.Container  .wraper .Viewerbox{
+    height: 40vh;
+    width: 30vh;
+    flex-shrink: 0;
+
+}
+.Container  .wraper .Viewerbox img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+}
+
   
 @media only  screen and (min-width:768px) {
     body{

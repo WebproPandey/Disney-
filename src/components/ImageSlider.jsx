@@ -34,6 +34,11 @@ const ImageSlider = () => {
                     <img src="/image/slider-scales.jpg" alt="" />
                 </a>
             </div>
+            {/* <div className='Imagewrape  h-[30vh] md:h-full'>
+                <a>
+                    <img src="/image/Slider-Crew.webp" alt="" />
+                </a>
+            </div> */}
            
         </Slider> 
      </div> 
