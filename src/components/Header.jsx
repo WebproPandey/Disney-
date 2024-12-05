@@ -21,7 +21,7 @@ const Header = () => {
         photo: user.picture,
       }));
     }
-  }, [isAuthenticated, user, isLoading, dispatch]);
+  }, [isAuthenticated, user, isLoading]);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -46,7 +46,7 @@ const Header = () => {
   
 
   return (
-    <div className="h-[12vh] w-full flex items-center justify-between fixed top-0 left-0 z-10 bg-[#090b13] py-2 px-4">
+    <div className="h-[12vh] w-full flex items-center justify-between fixed top-0 left-0 z-[11] bg-[#090b13] py-2 px-4">
       <div className="flex gap-5 justify-between items-center h-full w-[50%] md:lg:min-w-[60%] lg:min-w-[60%] px-5">
         <div className="logo h-full md:w-[20%] lg:w-[20%]"></div>
 
