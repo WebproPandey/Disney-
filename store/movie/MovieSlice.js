@@ -11,5 +11,8 @@ const movieSlice = createSlice({
 
 export const selectMoviesByType = (state, type) =>
   Object.values(state.movies.movies).filter(movie => movie.type === type);
+export const selectMovieById = (state, id) =>
+  Object.values(state.movies.movies).find((movie) => movie.id === id);
+
 
 export default movieSlice.reducer;

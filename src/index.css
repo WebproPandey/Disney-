@@ -203,7 +203,9 @@ a{
     object-fit: cover;
 
 }
-
+.Introdcution {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.9), rgba(255, 255, 255, 0.01));
+}
   
 @media only  screen and (min-width:768px) {
     body{
