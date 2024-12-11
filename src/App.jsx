@@ -11,8 +11,9 @@ function App() {
   const { isAuthenticated, user, isLoading } = useAuth0();
   if (isLoading) {
     return (
-      <div className="h-screen  w-full text-white  text-[10vw]">Loading...</div>
-    );
+      <div className="flex items-center justify-center min-h-screen ">
+      <div className="w-16 h-16 border-4 border-t-blue-500 border-r-transparent border-b-transparent border-l-transparent rounded-full animate-spin"></div>
+    </div>    );
   }
 
   return (

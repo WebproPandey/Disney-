@@ -1100,22 +1100,24 @@ const moviesData = {
 
       "33": {
         id:nanoid(),
-        backgroundImg: "",
-        cardImg:"",
-          About:{
-          year: "2024",
+        backgroundImg: "https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/728/1630728-i-aa14e28da8ff",
+        cardImg:"https://img10.hotstar.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/1729/1732609811729-v",
+        About:{
+          year: "2025",
           seasson:"3",
           lag: "2 Languages",
           certif: "U/A 7+",
-          runTime: "1h 59min",
+          runTime: "00min",
 
         },
         genre:{
-          Action: false,
+          Action: true,
           Adventure: false,
           famliy:false,
           fantasy:false,
           Comedy: false,
+          Animation:true,
+
           Drama: false,
           Horror: false,
           Mystery: false,
@@ -1125,60 +1127,60 @@ const moviesData = {
           War: false,
         },
         Language:{
-          Hindi: true,
+          Hindi: false,
           English: true,
           Telugu: false,
           Tamil:false
         },
-        description: "",
+        description: "This anthology series question , revists and twist classic Marvel chinematic moments.",
         titleimg: "https://img10.hotstar.com/image/upload/f_auto,h_124/sources/r1/cms/prod/727/1630727-t-34b807858ae7",
         title: "What If...?",
         type: "CommingSoon"
       }, 
       "34": {
         id:nanoid(),
-        backgroundImg: "",
-        cardImg:"",
+        backgroundImg: "https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/3894/1733737513894-i",
+        cardImg:"https://img10.hotstar.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/6709/1733737476709-v",
           About:{
-          year: "2019",
-          lag: "2 Languages",
-          certif: "U/A 7+",
-          runTime: "1h 59min",
+          year: "2025",
+          lag: "1 Languages",
+          certif: "U/A 13+",
+          runTime: "00min",
         },
         genre:{
           Action: false,
-          Adventure: false,
+          Adventure: true,
           famliy:false,
-          fantasy:false,
+          fantasy:true,
           Comedy: false,
-          Drama: false,
+          Drama: true,
           Horror: false,
           Mystery: false,
           Romance: false,
-          Science_Fiction: false,
+          Science_Fiction: true,
           Thriller: false,
           War: false,
         },
         Language:{
-          Hindi: true,
+          Hindi: false,
           English: true,
           Telugu: false,
           Tamil:false
         },
-        description: "",
-        titleimg: "",
-        title: "",
+        description: "Watch the new episode now.",
+        titleimg: "https://img10.hotstar.com/image/upload/f_auto,h_124/sources/r1/cms/prod/697/1733737500697-t",
+        title: "Doctor WHO",
         type: "CommingSoon"
       }, 
       "35": {
         id:nanoid(),
-        backgroundImg: "",
-        cardImg:"",
+        backgroundImg: "https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/7185/1732254987185-i",
+        cardImg:"https://img10.hotstar.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/3049/1732254963049-v",
           About:{
-          year: "2019",
-          lag: "2 Languages",
-          certif: "U/A 7+",
-          runTime: "1h 59min",
+          year: "2025",
+          lag: "1 Languages",
+          certif: "A",
+          runTime: "00m",
         },
         genre:{
           Action: false,
@@ -1186,25 +1188,26 @@ const moviesData = {
           famliy:false,
           fantasy:false,
           Comedy: false,
-          Drama: false,
+          Drama: true,
           Horror: false,
           Mystery: false,
           Romance: false,
           Science_Fiction: false,
-          Thriller: false,
+          Thriller: true,
           War: false,
         },
         Language:{
-          Hindi: true,
+          Hindi: false,
           English: true,
-          Telugu: false,
+          Telugu: true,
           Tamil:false
         },
-        description: "",
-        titleimg: "",
-        title: "",
+        description: "when 'god' goes in a killing spree in an dyllic village , a police officer with a traumatic past gets inadvertently pulled into the mystery. ",
+        titleimg: "https://img10.hotstar.com/image/upload/f_auto,h_124/sources/r1/cms/prod/3706/1732254973706-t",
+        title:"HariKatha",
         type: "CommingSoon"
       }, 
+
       "36": {
         id:nanoid(),
         backgroundImg: "",
@@ -1238,7 +1241,7 @@ const moviesData = {
         description: "",
         titleimg: "",
         title: "",
-        type: "CommingSoon"
+        type: ""
       }, 
       "37": {
         id:nanoid(),
@@ -1273,7 +1276,7 @@ const moviesData = {
         description: "",
         titleimg: "",
         title: "",
-        type: "CommingSoon"
+        type: ""
       }, 
       "38": {
         id:nanoid(),
@@ -1308,7 +1311,7 @@ const moviesData = {
         description: "",
         titleimg: "",
         title: "",
-        type: "CommingSoon"
+        type: ""
       }, 
       "39": {
         id:nanoid(),
@@ -1343,7 +1346,7 @@ const moviesData = {
         description: "",
         titleimg: "",
         title: "",
-        type: "CommingSoon"
+        type: ""
       }, 
       "40": {
         id:nanoid(),
@@ -1378,7 +1381,7 @@ const moviesData = {
         description: "",
         titleimg: "",
         title: "",
-        type: "CommingSoon"
+        type: ""
       }, 
      
       
