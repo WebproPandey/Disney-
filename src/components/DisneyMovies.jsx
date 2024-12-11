@@ -10,13 +10,16 @@ const DisneyMovies = () => {
         <div className="Container md:px-6 md:mt-[2vw] ">
         <h4 className="text-[1.7vw] font-semibold">Disney Movies</h4>
         <div className="wraper mt-[5px] w-full flex gap-6 overflow-x-auto py-[20px]">
-        {DisneyMovies.map((movie, index) => (
-          <div key={index} className="Viewerbox">
-            <Link to="/">
-              <img src={movie.cardImg} alt={movie.title} />
-            </Link>
-          </div>
-        ))}
+        {DisneyMovies.map((movie, index) => {
+            const movieSlug = movie.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")
+            return (
+            <div key={index} className="Viewerbox">
+             <Link to={`/detail/${movie.id}`}>
+               <img src={movie.cardImg} alt={movie.title} />
+             </Link>
+           </div>
+         ) 
+        })}
       </div>
     </div>  )
 }

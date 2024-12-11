@@ -1,4 +1,5 @@
 import Comedy from "./Comedy"
+import CommingSoon from "./CommingSoon"
 import DisneyMovies from "./DisneyMovies"
 import EntermentesRounde from "./EntermentesRounde"
 import ImageSlider from "./ImageSlider"
@@ -14,6 +15,7 @@ const Home = () => {
       <EntermentesRounde/>
       <Comedy/>
       <DisneyMovies/>
+      <CommingSoon/>
     </div>
   )
 }
