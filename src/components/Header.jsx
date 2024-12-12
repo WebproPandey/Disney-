@@ -55,115 +55,138 @@ const Header = () => {
   const toggleSearchHandler = (e) => {
     setIsSearchVisible((prevState) => !prevState);
   };
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => setMenuOpen(!isMenuOpen);
 
 
   return (
     <div className="h-[12vh] w-full flex items-center justify-between fixed top-0 left-0 z-[11] bg-[#090b13] py-2 px-4">
-      <div className="flex gap-5 justify-between items-center h-full w-[60%] px-5 relative" >
-        <div className="logo h-full md:w-[20%] lg:w-[20%]"></div>
-
-        {isAuthenticated && (
-          <nav className="w-auto flex gap-4">
-            <div className="linkwarper">
-              <i className="ri-home-4-line"></i>
-              <NavLink
-                to="/home"
-                className={({ isActive }) =>
-                  isActive ? "Navlink active" : "Navlink"
-                }
-              >
-                Home
-              </NavLink>
-            </div>
-            <div className="linkwarper">
-              <i className="ri-add-large-line"></i>
-              <NavLink
-               to="/watchlist"
-                className={({ isActive }) =>
-                  isActive ? "Navlink active" : "Navlink"
-                }
-              >
-                Watchlist
-              </NavLink>
-            </div>
-            <div className="linkwarper">
-              <i className="ri-star-fill"></i>
-              <NavLink
-                to="/home"
-                className={({ isActive }) =>
-                  isActive ? "Navlink active" : "Navlink"
-                }
-              >
-                Original
-              </NavLink>
-            </div>
-            <div className="linkwarper">
-              <i className="ri-movie-2-ai-fill"></i>
-              <NavLink
-                to="/home"
-                className={({ isActive }) =>
-                  isActive ? "Navlink active" : "Navlink"
-                }
-              >
-                Movies
-              </NavLink>
-            </div>
-            <div className="linkwarper">
-              <i className="ri-tv-fill"></i>
-              <NavLink
-                to="/home"
-                className={({ isActive }) =>
-                  isActive ? "Navlink active" : "Navlink"
-                }
-              >
-                Series
-              </NavLink>
-            </div>
-            <div onClick={toggleSearchHandler} className="linkwarper "> 
-              <i
-                className="ri-search-line cursor-pointer"
-              ></i>
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  isActive ? "Navlink active" : "Navlink"
-                }
-              >
-                Search
-              </NavLink>
-             </div>
-              {isSearchVisible && (
-                <Search/>
-              )}
-           
-          </nav>
-        )}
-      </div>
-
-      {!isAuthenticated ? (
-        <div
-          onClick={handleLogin}
-          className="Login px-7 py-2 border text-white capitalize font-semibold hover:bg-white hover:text-black cursor-pointer"
-        >
-          Login
-        </div>
-      ) : (
-        <>
-          <Logout />
-          {/* <div className="h-full relative bg-red-400">
-          <div className="profilebox h-[8vh] w-[8vh] border rounded-full bg-cover bg-center"
-            style={{ backgroundImage: `url(${user.picture})` }}
-          ></div>
-
-          <div onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
-            className="Logout  px-7 py-2 border text-white capitalize font-semibold hover:bg-white hover:text-black cursor-pointer"
-          >
-            Log Out
+    <div className="flex gap-5 items-center  h-full w-[60%] sm:w-full md:w-[60%] md:px-5 relative  ">
+      <div className="logo h-full w-[60%] md:w-[15%] lg:w-[10%]  "></div>
+  
+      {isAuthenticated && (
+        <nav className="hidden md:flex w-auto gap-4">
+          <div className="linkwarper">
+            <i className="ri-home-4-line"></i>
+            <NavLink
+              to="/home"
+              className={({ isActive }) =>
+                isActive ? "Navlink active" : "Navlink"
+              }
+            >
+              Home
+            </NavLink>
           </div>
-          </div> */}
-        </>
+          <div className="linkwarper">
+            <i className="ri-add-large-line"></i>
+            <NavLink
+              to="/watchlist"
+              className={({ isActive }) =>
+                isActive ? "Navlink active" : "Navlink"
+              }
+            >
+              Watchlist
+            </NavLink>
+          </div>
+          <div className="linkwarper">
+            <i className="ri-star-fill"></i>
+            <NavLink
+              to="/home"
+              className={({ isActive }) =>
+                isActive ? "Navlink active" : "Navlink"
+              }
+            >
+              Original
+            </NavLink>
+          </div>
+          <div className="linkwarper">
+            <i className="ri-movie-2-ai-fill"></i>
+            <NavLink
+              to="/home"
+              className={({ isActive }) =>
+                isActive ? "Navlink active" : "Navlink"
+              }
+            >
+              Movies
+            </NavLink>
+          </div>
+          <div className="linkwarper">
+            <i className="ri-tv-fill"></i>
+            <NavLink
+              to="/home"
+              className={({ isActive }) =>
+                isActive ? "Navlink active" : "Navlink"
+              }
+            >
+              Series
+            </NavLink>
+          </div>
+          <div onClick={toggleSearchHandler} className="linkwarper">
+            <i className="ri-search-line cursor-pointer"></i>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "Navlink active" : "Navlink"
+              }
+            >
+              Search
+            </NavLink>
+          </div>
+          {isSearchVisible && <Search />}
+        </nav>
       )}
     </div>
+  
+    {!isAuthenticated ? (
+      <div
+        onClick={handleLogin}
+        className="Login px-7 py-2 border text-white capitalize font-semibold hover:bg-white hover:text-black cursor-pointer"
+      >
+        Login
+      </div>
+    ) : (
+      <>     
+      <div className="md:hidden">
+      <button className="text-white text-2xl" onClick={toggleMenu} >
+        <i className="ri-menu-line"></i>
+      </button>
+      {isMenuOpen && 
+      (
+      <div className="absolute top-[12vh] right-0 z-[99] bg-gradient-to-l from-[#090b13]/70 to-[#4a5568]/30 py-2 w-[35%] pl-4 flex flex-col gap-2">
+          <div className="linkwarper">
+            <i className="ri-home-4-line"></i>
+            <NavLink to="/home">Home</NavLink>
+          </div>
+          <div className="linkwarper">
+            <i className="ri-add-large-line"></i>
+            <NavLink to="/watchlist">Watchlist</NavLink>
+          </div>
+          <div className="linkwarper">
+            <i className="ri-star-fill"></i>
+            <NavLink to="/home">Original</NavLink>
+          </div>
+          <div className="linkwarper">
+            <i className="ri-movie-2-ai-fill"></i>
+            <NavLink to="/home">Movies</NavLink>
+          </div>
+          <div className="linkwarper">
+            <i className="ri-tv-fill"></i>
+            <NavLink to="/home">Series</NavLink>
+          </div>
+          <div onClick={toggleSearchHandler} className="linkwarper">
+            <i className="ri-search-line cursor-pointer"></i>
+            <NavLink to="/">Search</NavLink>
+          </div>
+        </div>
+      )}
+      </div> 
+      <Logout />
+
+    </>
+    )}
+  </div>
+  
   );
 };
 

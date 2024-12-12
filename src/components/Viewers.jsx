@@ -1,8 +1,8 @@
 
 const Viewers = () => {
   return (
-    <div className="Viewers mt-[30px] px-6 grid gap-6 grid-cols-1 md:grid-cols-5 ">
-    <div className="Viewerbox">
+    <div className="Viewers mt-[30px] md:px-6 grid md:gap-6 gap-4 grid-cols-1  md:grid-cols-5 ">
+    <div className="Viewerbox ">
         <img src="/image/viewers-disney.png" alt="" />
         <video  src="/videos/disney.mp4" autoPlay={true} loop={true} playsInline={true}></video>
     </div>

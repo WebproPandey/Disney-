@@ -191,12 +191,7 @@ a{
 .wraper::-webkit-scrollbar{
     display: none;
 }
-.Container  .wraper .Viewerbox{
-    height: 40vh;
-    width: 30vh;
-    flex-shrink: 0;
 
-}
 .Container  .wraper .Viewerbox img{
     height: 100%;
     width: 100%;
@@ -216,10 +211,17 @@ a{
     body{
         font-size: 15px;
     }
+   
 }
 @media only  screen and (max-width:479px)  {
     body{
         font-size: 14px;
     }
 }
+@media (max-width: 768px) {
+    .Introdcution {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(255, 255, 255, 0.01));
+    }
+}
+
 
