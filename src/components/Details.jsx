@@ -116,13 +116,18 @@ const Details = () => {
         </div>
         <div className=" flex absolute bottom-5  justify-between items-center mt-8  z-[11] w-full">
           <div className="leftside w-[40%] h-full flex justify-between">
-            <button className="bg-white text-[1.3vw] text-black font-semibold px-[8vw] py-4 rounded-md flex items-center gap-2">
+            <a href="">
+             <button className="bg-white text-[1.3vw] text-black font-semibold px-[8vw] py-4 rounded-md flex items-center gap-2 hover:scale-[1.05] transition-transform duration-300 ease-in-out ">
               <i className="ri-play-large-fill"></i>
               Subscribe to Watch
-            </button>
-            <div className="WatchList text-white text-[2vw] bg-gray-200/20 flex justify-center items-center px-5 rounded-lg" 
+             </button>
+            </a>
+            
+            <div className="WatchList text-white text-[2vw] bg-gray-200/20 flex justify-center items-center px-5 rounded-lg hover:scale-[0.9] transition-transform duration-300 ease-in-out " 
              onClick={handleAddToWatchlist}>
-             <i className="ri-add-line"></i>
+              <button>
+                <i className="ri-add-line"></i>
+              </button>
             </div>
           </div>
           <div className="RightSide w-[40%] h-full flex justify-end items-center pr-[2vw]">

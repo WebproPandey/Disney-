@@ -2,6 +2,7 @@ import Comedy from "./Comedy"
 import CommingSoon from "./CommingSoon"
 import DisneyMovies from "./DisneyMovies"
 import EntermentesRounde from "./EntermentesRounde"
+import Footer from "./Footer"
 import ImageSlider from "./ImageSlider"
 import Recommanded from "./Recommanded"
 import Viewers from "./Viewers"
@@ -16,6 +17,7 @@ const Home = () => {
       <Comedy/>
       <DisneyMovies/>
       <CommingSoon/>
+      <Footer/>
     </div>
   )
 }
