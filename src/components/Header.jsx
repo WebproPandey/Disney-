@@ -52,7 +52,7 @@ const Header = () => {
   }
   const [isSearchVisible, setIsSearchVisible] =  useState(false);
 
-  const toggleSearchHandler = () => {
+  const toggleSearchHandler = (e) => {
     setIsSearchVisible((prevState) => !prevState);
   };
 
@@ -78,7 +78,7 @@ const Header = () => {
             <div className="linkwarper">
               <i className="ri-add-large-line"></i>
               <NavLink
-                to="/home"
+               to="/watchlist"
                 className={({ isActive }) =>
                   isActive ? "Navlink active" : "Navlink"
                 }

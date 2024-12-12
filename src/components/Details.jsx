@@ -3,7 +3,11 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectMovieById } from "../../store/movie/MovieSlice";
+import { selectMovieById  } from "../../store/movie/MovieSlice";
+import { useDispatch } from "react-redux";
+import { addMovieToWatchlist } from "../../store/movie/MovieSlice";
+
+
 
 const Details = () => {
   const { id } = useParams(); // Get movie ID from URL
@@ -27,6 +31,11 @@ const Details = () => {
   if (!movie) {
     return <div className="text-center text-white">Movie not found!</div>;
   }
+  const dispatch = useDispatch();
+
+  const handleAddToWatchlist = () => {
+    dispatch(addMovieToWatchlist(movie));
+  };
 
   return (
     <div className="DetailContainer h-screen w-full px-10 pt-[5vw]">
@@ -111,8 +120,9 @@ const Details = () => {
               <i className="ri-play-large-fill"></i>
               Subscribe to Watch
             </button>
-            <div className="text-white text-[2vw] bg-gray-200/20 flex justify-center items-center px-5 rounded-lg">
-              <i className="ri-add-line"></i>
+            <div className="WatchList text-white text-[2vw] bg-gray-200/20 flex justify-center items-center px-5 rounded-lg" 
+             onClick={handleAddToWatchlist}>
+             <i className="ri-add-line"></i>
             </div>
           </div>
           <div className="RightSide w-[40%] h-full flex justify-end items-center pr-[2vw]">
@@ -130,7 +140,7 @@ const Details = () => {
         </div>
       </div>
     </div>
-  );
+  ); 
 };
 
 export default Details;

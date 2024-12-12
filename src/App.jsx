@@ -6,6 +6,7 @@ import NotFound from "./components/NotFound";
 import Home from "./components/Home";
 import { useAuth0 } from "@auth0/auth0-react";
 import Details from "./components/Details";
+import WatchList from "./components/WatchList";
 
 function App() {
   const { isAuthenticated, user, isLoading } = useAuth0();
@@ -25,6 +26,7 @@ function App() {
           <Route path="/"  element={isAuthenticated ? <Navigate to="/home" /> : <Login />}/>
           <Route path="/home"  element={isAuthenticated ? <Home /> : <Navigate to="/" />}/>
           <Route path="/detail/:id" element={<Details/>}/>
+          <Route path="/watchlist" element={<WatchList />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
