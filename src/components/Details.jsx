@@ -1,7 +1,7 @@
 // src/components/Details.js
 
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectMovieById  } from "../../store/movie/MovieSlice";
 import { useDispatch } from "react-redux";
@@ -37,9 +37,17 @@ const Details = () => {
     dispatch(addMovieToWatchlist(movie));
   };
 
+ const navigate = useNavigate()
+ const handleGoBack = () => {
+  navigate(-1); 
+};
+
   return (
     <div className="DetailContainer h-screen w-full px-2 md:px-10 pt-[10vw] md:pt-[5vw] ">
-     <div className="wraper h-full w-full relative flex justify-end items-center ">
+    <div className="wraper h-full w-full relative flex justify-end md:justify-start items-center ">
+       <div onClick={handleGoBack} className="absolute  md:top-[2vw] top-[10vw] right-0 bg-gray-500/20 z-[3] px-2">
+           <i className="ri-close-large-fill text-[5vw]  md:text-[2vw] text-white cursor-pointer hover:text-gray-900"></i>
+       </div>  
     <div className="backgroundimg h-1/2 md:h-full w-full absolute  top-0 left-0 z-[2]">
       <img
         src={movie.backgroundImg}
@@ -47,10 +55,10 @@ const Details = () => {
         alt={movie.title}
       />
     </div>
-    <div className="Introdcution    md:h-full w-full md:w-[50%] flex flex-col gap-3 items-start pt-[4vw] px-4 md:px-[3vw] relative">
-      <div className="titleimg w-full max-w-xs md:max-w-full  z-[3] relative ">
+    <div className="Introdcution   md:h-full w-full md:w-[50%] flex flex-col gap-3 items-start pt-[3vw]  md:px-[3vw] relative">
+      <div className="titleimg md:w-1/2  w-[70%]  mt-[20vw] md:mt-[2vw]  z-[3] relative ">
         <img
-          className="h-full w-full object-contain z-[3]"
+          className="h-full w-full object-cover z-[3]"
           src={movie.titleimg}
           alt={movie.title}
         />
@@ -60,9 +68,9 @@ const Details = () => {
           {movie.relasetype}
         </h1>
       </div>
-      <div className="movieInfo flex flex-col gap-3">
-        <div className="About text-white text-sm  mt-[10vw] md:mt-4 flex gap-2 text-[4vw] md:text-[1.3vw] font-semibold">
-          <div className="flex items-center space-x-[5px] md:space-x-2">
+      <div  className="movieInfo   flex flex-col gap-3  z-[4] md:mt-2  ">
+        <div className="About  text-white text-sm  mt-[10vw] md:mt-4 flex gap-2 text-[4vw] md:text-[1.3vw] font-semibold">
+          <div className="flex items-center  md:space-x-2">
             <span>{movie.About.year}</span>
             {movie.About.seasson && (
               <>
@@ -114,7 +122,7 @@ const Details = () => {
         </div>
       </div>
     </div>
-    <div className="  flex   md:flex-row absolute bottom-5 justify-between items-center mt-8 z-[11] w-full md:px-4">
+    <div className="  flex   md:flex-row absolute bottom-5 md:bottom-2 justify-between items-center mt-8 z-[11] w-full md:px-4">
       <div className="leftside     md:w-[40%] flex flex-row gap-4 md:gap-0 md:justify-between items-center">
         <a href="">
           <button className="bg-white text-[2.5vw] md:text-[1.3vw] text-black font-semibold  px-2 md:px-[8vw] py-3 md:py-4 rounded-md flex items-center justify-start gap-2 hover:scale-[1.05] transition-transform duration-300 ease-in-out">

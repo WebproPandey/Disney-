@@ -41,15 +41,18 @@ const Header = () => {
     }
   };
 
-  if (isAuthenticated && user && !isLoading) {
-    dispatch(
-      setUserLoginDetails({
-        name: user.name,
-        email: user.email,
-        photo: user.picture,
-      })
-    );
-  }
+  useEffect(() => {
+    if (isAuthenticated && user && !isLoading) {
+      dispatch(
+        setUserLoginDetails({
+          name: user.name,
+          email: user.email,
+          photo: user.picture,
+        })
+      );
+    }
+  }, [isAuthenticated, user, isLoading, dispatch]);
+  
   const [isSearchVisible, setIsSearchVisible] =  useState(false);
 
   const toggleSearchHandler = (e) => {
