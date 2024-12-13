@@ -25,8 +25,8 @@ function App() {
         <Routes>
           <Route path="/"  element={isAuthenticated ? <Navigate to="/home" /> : <Login />}/>
           <Route path="/home"  element={isAuthenticated ? <Home /> : <Navigate to="/" />}/>
-          <Route path="/detail/:id" element={<Details/>}/>
-          <Route path="/watchlist" element={<WatchList />} />
+          <Route path="/detail/:id"   element={isAuthenticated ? <Details/> : <Navigate to="/"/> } />
+          <Route path="/watchlist"   element={isAuthenticated ? <WatchList /> : <Navigate to="/"/> } />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

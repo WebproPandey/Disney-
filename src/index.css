@@ -87,11 +87,6 @@ a{
     width: 100%; 
 }
 
-
-  
-/* .Navlink.active::before {
-    width: 100%; 
-} */
 .Login{
     transition:all ease 0.5s;
 }
@@ -201,7 +196,13 @@ a{
 .Introdcution {
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.9), rgba(255, 255, 255, 0.01));
 }
-  
+
+.NotFoundpage{
+    background-image: url('/image/404page.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
 @media only  screen and (min-width:768px) {
     body{
         font-size: 16px;
