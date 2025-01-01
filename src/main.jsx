@@ -8,11 +8,11 @@ import { store } from '../store/store.js';
 
 createRoot(document.getElementById('root')).render(
   <Auth0Provider
-   domain="dev-tnme50wkbomamrd.us.auth0.com"
-   clientId="AgCO5MjvrSL4VZyFTlfPVFr9QlFZJy8l"
-   authorizationParams={{
+  domain="dev-tnme50wkbomamrd.us.auth0.com"
+  clientId="AgCO5MjvrSL4VZyFTlfPVFr9QlFZJy8l"
+  authorizationParams={{
     redirect_uri: window.location.origin
-   }}
+  }}
   >
    <BrowserRouter future={{ v7_startTransition: true ,v7_relativeSplatPath: true }}>
     <Provider store={store}>
